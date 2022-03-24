@@ -107,7 +107,9 @@ class FirebasePhoneAuthService extends ChangeNotifier {
       return false;
     }
   }
-
+  getVerificationId() {
+      return _verificationId!;
+  }
   /// Send OTP to the given [_phoneNumber].
   ///
   /// Returns true if OTP was sent successfully.
