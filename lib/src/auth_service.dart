@@ -206,9 +206,10 @@ class FirebasePhoneAuthService extends ChangeNotifier {
 
     // Not on web.
     try {
-      _auth ??= FirebaseAuth.instance;
-      final authResult = await _auth!.signInWithCredential(authCredential!);
-      if (_onLoginSuccess != null) _onLoginSuccess!(authResult, autoVerified);
+//       _auth ??= FirebaseAuth.instance;
+//       final authResult = await _auth!.signInWithCredential(authCredential!);
+//       if (_onLoginSuccess != null) _onLoginSuccess!(authResult, autoVerified);
+      _onLoginSuccess!(authCredential!, autoVerified);
       return true;
     } on FirebaseAuthException catch (e) {
       if (_onLoginFailed != null) _onLoginFailed!(e);
